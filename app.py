@@ -10,14 +10,10 @@ from PIL import Image
 app = Flask(__name__)
 
 # Modelling Task
-#model = models.resnet18()
-#num_inftr = model.fc.in_features
-#model.fc = nn.Linear(num_inftr, 4)
-#model.load_state_dict(torch.load('./fix_resnet18.pth'))
-#model.eval()
 model = models.vgg16(pretrained=True)
+
 # Change to model state pict path on your computer
-model_state_dict_path = r"C:\Users\joekh\OneDrive\Desktop\Senior Design Code\model_2020_2021\model_02252021\vgg_subclass_model_state_dict_02252021.pt"
+model_state_dict_path = r"/Users/kylelee/Desktop/Patho-ML_App/vgg_subclass_model_state_dict_02252021.pt"
 model.load_state_dict(torch.load(model_state_dict_path,map_location=torch.device('cpu')))
 model.eval()
 
@@ -59,14 +55,13 @@ def get_prediction(image_bytes):
 	return class_names[prediction]
 
 diseases = {
-	"Adenosis": "",
-	"Ductal Carcinoma": "Apple scab is a common disease of plants in the rose family (Rosaceae) that is caused by the ascomycete fungus Venturia inaequalis. While this disease affects several plant genera, including Sorbus, Cotoneaster, and Pyrus, it is most commonly associated with the infection of Malus trees, including species of flowering crabapple, as well as cultivated apple.",
-	"Fibroadenoma": "Gymnosporangium juniperi-virginianae is a plant pathogen that causes cedar-apple rust. In virtually any location where apples or crabapples (Malus) and Eastern red-cedar (Juniperus virginiana) coexist, cedar apple rust can be a destructive or disfiguring disease on both the apples and cedars. Quince and hawthorn are the most common host and many species of juniper can substitute for the eastern red cedars.",
-	"Lobular Carcinoma": "Black rot is a fungus disease that can cause serious losses in apple orchards, especially in warm, humid areas. The black rot fungus covers a wide geographical range and can infect many hosts other than apple. The role these hosts play in the spread and development of the disease is not known. Three forms of the disease can occur: a leaf spot known as frogeye leaf spot, a fruit rot, and a limb canker. Severe leaf spotting can result in defoliation that weakens the tree, infected fruit become unmarketable, and limb cankers can girdle and eventually kill entire branches.",
-	"Mucinous Carcinoma":"",
-	"Papillary Carcinoma":"",
-	"Phyllodes Tumor":"",
-	"Tubular Adenoma":"",
+	"Adenosis": "Benign tissue",
+	"Ductal Carcinoma": "Malignant tissue",
+	"Fibroadenoma": "Benign tissue",
+	"Mucinous Carcinoma": "Malignant tissue",
+	"Papillary Carcinoma": "Malignant tissue",
+	"Phyllodes Tumor": "Benign tissue",
+	"Tubular Adenoma": "Benign tissue",
 }
 
 # Treat the web process

@@ -1,31 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
 	<form class="form-signin" method=post enctype=multipart/form-data>
-		{% if name == "Adenosis"%}
-			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
-			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p> 
-		{% if name == "Fibroadenoma"%}
-			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
-			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p> 
-		{% if name == "Tubular Adenoma"%}
-			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
-			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p> 
-		{% if name == "Phyllodes Tumor"%}
-			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
-			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p> 
-		{% if name == "Lobular Carcinoma"%}
-			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
-			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p>
-		{% if name == "Mucinous Carcinoma"%}
-			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
-			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p>
-		{% if name == "Papillary Carcinoma"%}
-			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
-			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p>
-		{% if name == "Ductal Carcinoma"%}
-			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
-			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p>
-		{% endif %}
+		<h1 class="h1 mb-3 font-weight-normal"> Diagnosis from breast cancer tissue slide is of a {{ name }} subtype!</h5>
+		<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p> 
 		<p class="mt-5 mb-3 text-muted">Powered by PyTorch, Flask, and Bootstrap.</p>
 		<div class="row">
 			<div class="col-sm-4 align-self-center"><img src="/static/pt.png" alt="" width="60"></div>
@@ -33,4 +10,5 @@
 			<div class="col-sm-4 align-self-center"><img src="/static/bs.png" alt="" width="50"></div>
 		</div>
 	</form>
+
 {% endblock %}
