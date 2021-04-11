@@ -1,11 +1,30 @@
 {% extends "layout.html" %}
 {% block content %}
 	<form class="form-signin" method=post enctype=multipart/form-data>
-		{% if name == "healthy"%}
-			<h1 class="h1 mb-3 font-weight-normal"> Your plant is healthy! </h1>
-		{% else %}
-			<h1 class="h1 mb-3 font-weight-normal"> Your leaf got a {{ name }} disease!</h5>
+		{% if name == "Adenosis"%}
+			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
 			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p> 
+		{% if name == "Fibroadenoma"%}
+			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
+			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p> 
+		{% if name == "Tubular Adenoma"%}
+			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
+			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p> 
+		{% if name == "Phyllodes Tumor"%}
+			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
+			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p> 
+		{% if name == "Lobular Carcinoma"%}
+			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
+			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p>
+		{% if name == "Mucinous Carcinoma"%}
+			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
+			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p>
+		{% if name == "Papillary Carcinoma"%}
+			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
+			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p>
+		{% if name == "Ductal Carcinoma"%}
+			<h1 class="h1 mb-3 font-weight-normal"> The diagnosis is {{ name }}. </h1>
+			<h3 class="h5 mb-3 font-weight-normal"> {{ description }} </p>
 		{% endif %}
 		<p class="mt-5 mb-3 text-muted">Powered by PyTorch, Flask, and Bootstrap.</p>
 		<div class="row">
